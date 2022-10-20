@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23a129e5-5752-4093-9370-5de925a630b1" name="Changes" comment="Diagram added">
-      <change afterPath="$PROJECT_DIR$/src/Game/Archer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/GameCharacter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Knight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/NormalLocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/SafeHouse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Samurai.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/ToolStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Weapons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/BattleLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Cemetery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/CursedCastle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Mine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Monster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Mordor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Orc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Snake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Vampire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Zombie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/SafeHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/SafeHouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/ToolStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/ToolStore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +46,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\musab\IdeaProjects\AdventureGame" />

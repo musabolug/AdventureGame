@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Player {
     private  int damage;
     private int health;
+    private int defHealth;
     private int money;
     private String charName;
     private String name;
@@ -54,6 +55,7 @@ public class Player {
     public void initPlayer(GameCharacter gameCharacter){
         this.setDamage(gameCharacter.getDamage());
         this.setHealth(gameCharacter.getHealth());
+        this.setDefHealth(gameCharacter.getHealth());
         this.setMoney(gameCharacter.getMoney());
         this.setCharName(gameCharacter.getName());
     }
@@ -61,13 +63,19 @@ public class Player {
     public  void  printInfo(){
         System.out.println("Your Weapon :"+this.getInventory().getWeapon().getName()+
                 ", Your Armor: "+this.getInventory().getArmor().getName()+
-                ", Your Damage: "+this.getDamage()+
-                ", Your Health:" + this.getHealth()+
+                ", Your Damage: "+this.getTotalDamage()+
+                ", Your Health:" + this.getTotalHealth()+
                 ", Your Money;"+ this.getMoney());
 
     }
-    public int getDamage() {
+    public int getTotalDamage(){
         return damage + this.getInventory().getWeapon().getDamage();
+    }
+    public int getDamage() {
+        return damage;
+    }
+    public int getTotalHealth(){
+        return health + this.getInventory().getArmor().getBlock();
     }
 
     public void setDamage(int damage) {
@@ -75,7 +83,7 @@ public class Player {
     }
 
     public int getHealth() {
-        return health + this.getInventory().getArmor().getBlock();
+        return health;
     }
 
     public void setHealth(int health) {
@@ -112,4 +120,18 @@ public class Player {
         this.inventory = inventory;
     }
 
+    public Weapons getWeapon(){
+        return this.getInventory().getWeapon();
+    }
+    public Armor getArmor(){
+        return this.getInventory().getArmor();
+    }
+
+    public int getDefHealth() {
+        return defHealth;
+    }
+
+    public void setDefHealth(int defHealth) {
+        this.defHealth = defHealth;
+    }
 }

@@ -47,7 +47,7 @@ public class ToolStore extends NormalLocation {
         System.out.println("----- Weapons -----");
         System.out.println();
         for (Weapons w : Weapons.weapons()) {
-            System.out.println("Id: " + w.getId() + w.getName() + " <Price : " + w.getPrice() + ", Damge : " + w.getDamage() + ">");
+            System.out.println("Id: " + w.getId() +" Name : "+ w.getName() + " <Price : " + w.getPrice() + ", Damge : " + w.getDamage() + ">");
         }
         System.out.println("0- Exit");
     }
@@ -83,7 +83,7 @@ public class ToolStore extends NormalLocation {
         System.out.println("----- Armors -----");
         System.out.println();
         for (Armor a : Armor.armors()) {
-            System.out.println("Id: " + a.getId() + a.getName() + " <Price : " + a.getPrice() + ", Armor : " + a.getBlock() + ">");
+            System.out.println("Id: " + a.getId()+ " Name : "+ a.getName() + " <Price : " + a.getPrice() + ", Armor : " + a.getBlock() + ">");
         }
         System.out.println("0- Exit");
 
