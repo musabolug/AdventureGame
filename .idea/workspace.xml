@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23a129e5-5752-4093-9370-5de925a630b1" name="Changes" comment="Diagram added">
-      <change afterPath="$PROJECT_DIR$/src/Game/BattleLocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Cemetery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/CursedCastle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Mine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Mordor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Orc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Snake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Vampire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Zombie.java" afterDir="false" />
+    <list default="true" id="23a129e5-5752-4093-9370-5de925a630b1" name="Changes" comment="files added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/BattleLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/BattleLocation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Inventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/SafeHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/SafeHouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/ToolStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/ToolStore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665920227569</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="files added">
+      <created>1666280561310</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666280561310</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Diagram added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Diagram added" />
+    <MESSAGE value="files added" />
+    <option name="LAST_COMMIT_MESSAGE" value="files added" />
   </component>
 </project>

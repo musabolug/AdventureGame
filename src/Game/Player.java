@@ -32,24 +32,36 @@ public class Player {
 
         System.out.print("Please select your Mighty Warrior :");
         int selectChar = input.nextInt();
-        switch (selectChar){
-            case 1:
-                initPlayer(new Samurai());
-                break;
-            case 2:
-                initPlayer(new Archer());
-                break;
-            case 3:
-                initPlayer(new Knight());
-            default:
-                initPlayer(new Samurai());
+        if (selectChar>= 1 && selectChar<=3) {
+            switch (selectChar) {
+                case 1:
+                    initPlayer(new Samurai());
+                    break;
+                case 2:
+                    initPlayer(new Archer());
+                    break;
+                case 3:
+                    initPlayer(new Knight());
+                    break;
+            }
         }
-        /*
-        System.out.println("Character : "+ this.getCharName()+
-                ", Damage: "+this.getDamage()+
-                ", Health:" + this.getHealth()+
-                ", Money;"+ this.getMoney());
-*/
+        while(selectChar>3||selectChar<1){
+            System.out.println("Please select an existing cahracter!");
+            System.out.print("Please select your Mighty Warrior :");
+            selectChar = input.nextInt();
+            switch (selectChar) {
+                case 1:
+                    initPlayer(new Samurai());
+                    break;
+                case 2:
+                    initPlayer(new Archer());
+                    break;
+                case 3:
+                    initPlayer(new Knight());
+                    break;
+            }
+        }
+
     }
 
     public void initPlayer(GameCharacter gameCharacter){

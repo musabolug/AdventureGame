@@ -19,13 +19,19 @@ public class BattleLocation extends Location{
         System.out.println("You are here now :"+this.getLocationType());
         System.out.println("Watch out! there might be "+monsterNumber+" "+ this.getMonster().getName()+" living here! ");
         System.out.print("<B> Battle or <R> Run :");
-        String selectCase = input.nextLine();
-        selectCase = selectCase.toUpperCase();
+        String selectCase = input.nextLine().toUpperCase();
+        while (!selectCase.equals("B")&& !selectCase.equals("R")){
+            System.out.println("You entered a wrong input!");
+            selectCase = input.nextLine().toUpperCase();
+        }
         if (selectCase.equals("B")&&  combat(monsterNumber)){
             System.out.println("Battle states :");
             System.out.println("You beated every monster in the "+this.getLocationType());
             return true;
+        } else if (selectCase.equals("R")) {
+            System.out.println("You proved your cowardice by running away from war!! ");
         }
+
         if (this.getPlayer().getTotalHealth() <=0){
             System.out.println("You are dead !");
             return false;
@@ -35,56 +41,69 @@ public class BattleLocation extends Location{
 
     public boolean combat(int monsterNumber){
         for (int i= 1; i <= monsterNumber; i++){
+            int firstHit= ramdomHitChance();
         this.getMonster().setHealth(this.getMonster().getDefHealth());
         playerStats();
         enemyStats(i);
-        if (ramdomHitChance()<50){
-            while (this.getPlayer().getTotalHealth()>0 && this.getMonster().getHealth()>0){
-                System.out.println(this.getMonster().getName() +" hit you");
-                this.getPlayer().setHealth(this.getPlayer().getTotalHealth()-this.getMonster().getDamage());
-                afterHit();
-                System.out.print("<H> Hit or <R> Run : ");
-                String selectCombat = input.nextLine().toUpperCase();
-                if (selectCombat.equals("H")){
-                    this.getMonster().setHealth(this.getMonster().getHealth()-this.getPlayer().getTotalDamage());
+        while (this.getPlayer().getTotalHealth()>0 && this.getMonster().getHealth()>0){
+            System.out.print("<H> Hit or <R> Run : ");
+            String selectCombat = input.nextLine().toUpperCase();
+            while (!selectCombat.equals("H") && !selectCombat.equals("R")){
+                System.out.println("You entered a wrong input!");
+                selectCombat = input.nextLine().toUpperCase();
+            }
+            if (selectCombat.equals("R")){
+                return false;
+            }
+            if (selectCombat.equals("H")){
+                if (firstHit==0){
+                    this.getMonster().setHealth(this.getMonster().getHealth() - this.getPlayer().getTotalDamage());
+                    System.out.println("You hit !");
+                    System.out.println("Hitten damage: " + this.getPlayer().getTotalDamage());
+                    System.out.println("Your health: " + this.getPlayer().getHealth());
+                    System.out.println(this.getMonster().getName() + " Health : " + this.getMonster().getHealth());
+                    System.out.println();
+                    if (this.getMonster().getHealth() > 0) {
+                        System.out.println(this.getMonster().getName() +" hit you");
+                        this.getPlayer().setHealth(this.getPlayer().getTotalHealth()-this.getMonster().getDamage());
+                        afterHit();
+                    }
+                }
+                if (firstHit==1){
+                    System.out.println(this.getMonster().getName()+ " hit you!");
+                    this.getPlayer().setHealth(this.getPlayer().getTotalHealth()-this.getMonster().getDamage());
+                    System.out.println("Hitten damage: " + this.getMonster().getDamage());
+                    System.out.println("Your health : " + this.getPlayer().getTotalHealth());
+                    System.out.println("You hit !");
+                    this.getMonster().setHealth(this.getMonster().getHealth() - this.getPlayer().getTotalDamage());
+                    System.out.println("Hitten damage: " + this.getPlayer().getTotalDamage());
+                    System.out.println("Your health: " + this.getPlayer().getHealth());
+                    System.out.println(this.getMonster().getName() + " Health : " + this.getMonster().getHealth());
+                    System.out.println();
                     afterHit();
                 }
-                else {
-                    return false;
-                }
-            }
-        }if (ramdomHitChance()>50) {
-                while (this.getPlayer().getTotalHealth() > 0 && this.getMonster().getHealth() > 0) {
-                    System.out.print("<H> Hit or <R> Run : ");
-                    String selectCombat = input.nextLine().toUpperCase();
-                    if (selectCombat.equals("H")) {
-                        this.getMonster().setHealth(this.getMonster().getHealth() - this.getPlayer().getTotalDamage());
-                        if (this.getMonster().getHealth() > 0) {
-                            System.out.println();
-                            System.out.println(this.getMonster().getName() + " hit you");
-                            this.getPlayer().setHealth(this.getPlayer().getTotalHealth() - this.getMonster().getDamage());
-                            afterHit();
-                        }
-                    } else {
-                        return false;
-                    }
 
-                }
             }
+        }
+
         }
         if (this.getMonster().getHealth()<this.getPlayer().getHealth()){
             System.out.println("You Defeated the Enemies! ");
-            System.out.println("You find a Battle award : "+this.getAward());
-            if (this.getAward().equals("Food")){
-                getPlayer().getInventory().setFood(true);
-            }else if (this.getAward().equals("Water")){
-                getPlayer().getInventory().setWater(true);
-            }else if (this.getAward().equals("Firewood")){
-                getPlayer().getInventory().setFirewood(true);
+            if (this.getLocationType().equals("Mine")){
+                snakeAwards();
+            }else {
+                System.out.println("You find a Battle award : " + this.getAward());
+                if (this.getAward().equals("Food")) {
+                    getPlayer().getInventory().setFood(true);
+                } else if (this.getAward().equals("Water")) {
+                    getPlayer().getInventory().setWater(true);
+                } else if (this.getAward().equals("Firewood")) {
+                    getPlayer().getInventory().setFirewood(true);
+                }
+                System.out.println("You Deserve this treasure : " + this.getMonster().getTreasure() + " Gold");
+                this.getPlayer().setMoney(this.getPlayer().getMoney() + this.getMonster().getTreasure());
+                System.out.println("Your new Money :" + this.getPlayer().getMoney());
             }
-            System.out.println("You Deserve this treasure : "+this.getMonster().getTreasure()+" Gold");
-            this.getPlayer().setMoney(this.getPlayer().getMoney()+this.getMonster().getTreasure());
-            System.out.println("Your new Money :"+this.getPlayer().getMoney());
         }else {
             return false;
         }
@@ -96,9 +115,7 @@ public class BattleLocation extends Location{
         int weapon = a.nextInt(100);
         int armor = a.nextInt(100);
         int money = a.nextInt(100);
-        if (precentage<=15){
-
-        }else if ( precentage<=15){
+        if ( precentage<=15){
             if (weapon<=50){
                 if (this.getPlayer().getInventory().getWeapon().getId()<=1){
                     System.out.println("You find Degger ! ");
@@ -164,6 +181,7 @@ public class BattleLocation extends Location{
         System.out.println(this.getMonster().getName() +" Health :"+ this.getMonster().getHealth());
     }
     public void enemyStats(int i){
+        System.out.println("---------------------");
         System.out.println(i+"."+this.getMonster().getName()+  " Stats: ");
         System.out.println("---------------------");
         System.out.println("Health : "+ getMonster().getHealth());
@@ -171,6 +189,7 @@ public class BattleLocation extends Location{
         System.out.println("Reward :"+getMonster().getTreasure());
     }
     public void playerStats(){
+        System.out.println("---------------------");
         System.out.println("Player Stats: ");
         System.out.println("---------------------");
         System.out.println("Health :"+getPlayer().getTotalHealth());
@@ -183,7 +202,7 @@ public class BattleLocation extends Location{
     }
     public int ramdomHitChance(){
         Random hitChacne = new Random();
-        return  hitChacne.nextInt(100);
+        return  hitChacne.nextInt(2);
     }
     public  int randomMonsterNumber(){
         Random r = new Random();

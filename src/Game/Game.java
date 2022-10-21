@@ -26,6 +26,7 @@ public class Game {
             System.out.println("3- Cemetery ==> This place is a Battle Location full of Zombies ! ");
             System.out.println("4- Cursed Castle ==> This place is a Battle Location full of Vampires ! ");
             System.out.println("5- Mordor ==> This place is a Battle Location full of Orcs ! ");
+            System.out.println("6- Mine ==> This place is a Battle Location full of Snakes ! ");
             System.out.println("0- Exit ==> Finis game !");
 
             System.out.print("Please select the location you want to go : ");
@@ -36,42 +37,45 @@ public class Game {
                         location = null;
                         break;
                     case 1:
-                        if (player.getInventory().isFood()== true&&player.getInventory().isWater()== true&& player.getInventory().isFirewood()== true ){
+                        if (player.getInventory().isFood()&&player.getInventory().isWater()&& player.getInventory().isFirewood()){
                             System.out.println("---------- WİN WİN ---------- ");
                             location = null;
-
+                            break;
                         }
-                        else {
                             location = new SafeHouse(player);
-                        }
                         break;
                     case 2:
                         location = new ToolStore(player);
                         break;
                     case 3:
 
-                        if (player.getInventory().isFood()== true){
+                        if (player.getInventory().isFood()){
                             System.out.println("You can't get here please select another place !");
-                        }
-                        else {
+                            break;
+                        }else {
                             location = new Cemetery(player);
                         }
                         break;
                     case 4:
-                        if (player.getInventory().isWater() == true){
+                        if (player.getInventory().isWater()){
                             System.out.println("You can't get here please select another place !");
+                            break;
                         }
                         else {
                             location = new CursedCastle(player);
                         }
                         break;
                     case 5:
-                        if (player.getInventory().isFirewood()== true){
+                        if (player.getInventory().isFirewood()){
                             System.out.println("You can't get here please select another place !");
+                            break;
                         }
                         else {
                             location = new Mordor(player);
                         }
+                        break;
+                    case 6:
+                        location = new Mine(player);
                         break;
                     default:
                         location = new SafeHouse(player);
